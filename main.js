@@ -81,7 +81,7 @@ function yellow() {
     }); 
 
     window.addEventListener('keydown',(e) =>{
-        if(e.code == 'Enter') {
+        if(e.key == 'Enter') {
             yellow();
         }
     });
