@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: 1;
+    font-size: 14px;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    flex: 0 1 800px;
+    height: 90vh;
+    padding-top: 20px;
+}
+
+.title {
+    width: 90%;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    background-color: #fff;
+    border-radius: 30px;
+    border: 3px solid silver;
+    margin-bottom: 30px;
+}
+.flex-wrapper {
+    width: 80%;
+    margin: 0px auto;
+    color: #fff;
+    padding: 30px 0px;
+
+}
+.add-todo-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 80px;
+}
+.input-wrapper {
+    width: 100%;
+
+}
+label {
+    font-size: 19px;
+    line-height: 140%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;  
+}
+label span {
+    color: red;
+    font-size: 16px;
+    margin-left: 2px;
+}
+
+input._close{
+    box-shadow: 0 0 15px red;
+}
+.input-wrapper input {
+    margin-top: 10px;
+    height: 50px;
+    padding: 0px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 100%;
+    transition: box-shadow .4s ease 0s;
+    outline: none;
+}
+input:focus {
+    box-shadow: 0 0 15px #7a956b;
+}
+
+button {
+    outline: none;
+}
+.button-wrapper{
+    padding-top: 34px;
+}
+.button-wrapper button {
+    width: 150px;
+    padding: 16px 0px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7a956b;
+    font-size: 18px;
+    font-weight: 700;
+    cursor:pointer;
+    border-radius: 20px;
+    color:white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    top: 0;
+}
+button:hover{
+    box-shadow: 0 0 15px #7a956b;
+}
+button:active{
+    top: 3px;
+}
+.title2 {
+    font-size: 32px;
+    line-height: 140%;
+    font-family:sans-serif; 
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+.todo-item {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+}
+.todo-item .description {
+    flex: 1 0 90%;
+    background-color: #719899;
+    border-radius: 10px;
+    padding:15px 15px;
+    line-height: 20px;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all .5s ease 0s;
+}
+.buttons {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+}
+.btn-delete {
+    width: 35px;
+    height: 35px;   
+    margin-left: 10px;
+    display: flex;
+    background-color: #7a956b;
+    cursor:pointer;
+    text-transform: uppercase;
+    position: relative;
+}
+.btn-delete:after,
+.btn-delete::before {
+    content:"";
+    display: block;
+    width: 90%;
+    height: 3px;
+    position: absolute;
+    left: 1px;
+    background-color: #fff;
+}
+.btn-delete::before {
+    top: 16px;
+    transform: rotate(45deg);
+}
+.btn-delete:after {
+    bottom: 16px;
+    transform: rotate(-45deg);
+}
+.btn-delete:hover {
+    box-shadow: 0 0 10px silver;
+}
+.btn-complete {
+    width: 35px;
+    height: 35px;
+    border: 3px solid white;
+    margin-left: 10px;
+}
+
+.btn-complete:hover {
+    box-shadow: 0 0 10px#7a956b;
+}
+/* todolist */
+.todo-item.checked .description{
+    opacity: .4;
+    
+}
+.todo-item._active {
+    animation-name: fade;
+    animation-duration: .5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media(max-width:700px){
+    .flex-wrapper{
+        width: 96%;
+
+    }
+    .description {
+        padding:10px 15px 50px;
+        flex: 1 1 100%;
+    }
+    .buttons {
+        display: flex;
+        margin-left: 10px;
+        align-items: center;
+        position: absolute;
+        bottom: 5px;
+        right: 5%;
+    }
+    .add-todo-wrapper {
+        flex-direction: column;
+    }
+    .button-wrapper{
+        padding-top: 20px;
+    }
+}
